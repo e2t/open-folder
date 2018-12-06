@@ -9,6 +9,7 @@ Sub Main()
     Dim pathname As String
     Dim selectComp As Component2
     Dim selectView As View
+    Dim refDoc As ModelDoc2
     
     Set swApp = Application.SldWorks
     Set currentDoc = swApp.ActiveDoc
@@ -25,7 +26,10 @@ Sub Main()
                 Case swDocDRAWING
                     Set selectView = selmgr.GetSelectedObjectsDrawingView2(1, -1)
                     If Not selectView Is Nothing Then
-                        pathname = selectView.ReferencedDocument.GetPathName
+                        Set refDoc = selectView.ReferencedDocument
+                        If Not refDoc Is Nothing Then
+                            pathname = refDoc.GetPathName
+                        End If
                     End If
             End Select
         End If
