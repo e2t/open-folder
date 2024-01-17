@@ -1,4 +1,6 @@
-﻿# OpenFolder
+This project has been moved to https://codeberg.org/e2t/open-folder
+ 
+ # OpenFolder
 Макрос для открытия каталога активной или выделенной модели SolidWorks.
 
 ### Зависимости
